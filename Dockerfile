@@ -3,7 +3,7 @@ FROM ubuntu:14.04
 MAINTAINER Valentin Chatelain <v.chatelain@sysdream.com>
 
 # xvnc / xfce installation
-RUN apt-get update && apt-get upgrade -y && DEBIAN_FRONTEND=noninteractive apt-get install -y firefox xfce4 vnc4server && rm -rf /var/lib/apt/
+RUN apt-get update && apt-get upgrade -y && DEBIAN_FRONTEND=noninteractive apt-get install -y zip wget python git firefox xfce4 vnc4server && rm -rf /var/lib/apt/
 
 # VNC related environment var
 # Password for VNC must be changed
@@ -15,6 +15,7 @@ ENV VNC_PW vncpassword
 ENV VNC_PORT="5901"
 
 EXPOSE 5901
+EXPOSE 6080
 
 ADD .vnc /root/.vnc
 ADD startup.sh /root/

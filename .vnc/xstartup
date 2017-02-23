@@ -2,3 +2,4 @@
 
 xrdb $HOME/.Xresources
 startxfce4 &
+firefox &
